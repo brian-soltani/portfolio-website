@@ -12,10 +12,10 @@ function initials(name: string) {
 }
 
 // Native <details> keeps the accordion keyboard-accessible with no JS.
-// The first role opens by default, matching the reference layout.
-function RoleRow({ role, open }: { role: Role; open: boolean }) {
+// The role flagged `defaultOpen` in the data opens on load.
+function RoleRow({ role }: { role: Role }) {
   return (
-    <details open={open} className="group border-b border-line-soft last:border-b-0">
+    <details open={role.defaultOpen} className="group border-b border-line-soft last:border-b-0">
       <summary className="flex cursor-pointer list-none items-start gap-3 py-3.5 [&::-webkit-details-marker]:hidden">
         {role.logo ? (
           <Image
@@ -93,16 +93,18 @@ function RoleRow({ role, open }: { role: Role; open: boolean }) {
           </div>
         ))}
 
-        <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Technologies">
-          {role.stack.map((tech) => (
-            <li
-              key={tech}
-              className="rounded-md border border-line bg-chip px-2 py-0.5 text-[0.8125rem] text-body"
-            >
-              {tech}
-            </li>
-          ))}
-        </ul>
+        {role.stack.length > 0 && (
+          <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Technologies">
+            {role.stack.map((tech) => (
+              <li
+                key={tech}
+                className="rounded-md border border-line bg-chip px-2 py-0.5 text-[0.8125rem] text-body"
+              >
+                {tech}
+              </li>
+            ))}
+          </ul>
+        )}
 
         {role.website && (
           <a
@@ -136,8 +138,8 @@ export default function Experience() {
   return (
     <Section id="experience" title="My experience.">
       <div>
-        {experience.map((role, i) => (
-          <RoleRow key={role.company} role={role} open={i === 0} />
+        {experience.map((role) => (
+          <RoleRow key={role.company} role={role} />
         ))}
       </div>
     </Section>

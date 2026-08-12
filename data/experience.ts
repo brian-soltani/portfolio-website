@@ -17,12 +17,28 @@ export type Role = {
   summary: string;
   sections: RoleSection[];
   stack: string[];
+  // Which roles the accordion expands on load. The rows are independent
+  // <details>, so any number of them can start open.
+  defaultOpen?: boolean;
 };
 
 export const experience: Role[] = [
   {
+    company: "George Mason University",
+    title: "Research Assistant, SPIRE Lab",
+    timeframe: "August 2026 - Present",
+    location: "Fairfax, Virginia",
+    logo: "/logos/spire.png",
+    defaultOpen: true,
+    summary:
+      "Recently joined the SPIRE Lab as a research assistant. Details on the work will go here once there's something worth writing up.",
+    sections: [],
+    stack: [],
+  },
+  {
     company: "Ngoit",
     title: "Full-Stack Developer",
+    defaultOpen: true,
     timeframe: "May 2025 - July 2026",
     logo: "/logos/ngoit.png",
     summary:
