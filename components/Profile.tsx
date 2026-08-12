@@ -50,16 +50,18 @@ export default function Profile() {
               <h1 className="text-[1.55rem] font-bold leading-[1.08] tracking-tight text-title">
                 {site.name}
               </h1>
-              <p className="mt-1 text-sm text-muted">Incoming B.S. Mathematics @ George Mason</p>
+              <p className="mt-1 text-sm text-muted">
+                Research Assistant @ SPIRE Lab | Math Undergraduate, &rsquo;29
+              </p>
             </div>
           </div>
 
           <div className="mt-5 space-y-3 text-[0.9375rem] leading-relaxed">
             <p>
-              Hey! I&apos;m Brian, a Fairfax-based math student heading into George Mason this fall,
-              focused on the intersection of quantitative methods and working software. I like
-              problems that look messy until you find the structure underneath: a proof, a broken
-              build, a process that needs redesigning.
+              Hey! I&apos;m Brian, a Fairfax-based math student at George Mason and a new research
+              assistant in the SPIRE Lab, focused on the intersection of quantitative methods and
+              working software. I like problems that look messy until you find the structure
+              underneath: a proof, a broken build, a process that needs redesigning.
             </p>
             <p>
               So far that&apos;s meant rebuilding an e-commerce platform for 1,000+ users, shipping
