@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 export default function Footer() {
@@ -7,12 +8,20 @@ export default function Footer() {
         <p>
           © 2026 {site.name} · {site.location}
         </p>
-        <a
-          href={`mailto:${site.email}`}
-          className="text-title underline decoration-line underline-offset-4 transition-colors hover:decoration-muted"
-        >
-          {site.email}
-        </a>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/privacy"
+            className="text-title underline decoration-line underline-offset-4 transition-colors hover:decoration-muted"
+          >
+            Privacy
+          </Link>
+          <a
+            href={`mailto:${site.email}`}
+            className="text-title underline decoration-line underline-offset-4 transition-colors hover:decoration-muted"
+          >
+            {site.email}
+          </a>
+        </div>
       </div>
     </footer>
   );
