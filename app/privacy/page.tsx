@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 // Last reviewed against the actual behavior of the site. If you add anything
 // that talks to a third party — a contact form, analytics, an embed, a hosted
 // font — update this page in the same commit.
-const UPDATED = "August 14, 2026";
+const UPDATED = "September 30, 2026";
 
 function P({ children }: { children: React.ReactNode }) {
   return <p className="text-[0.9375rem] leading-relaxed text-body">{children}</p>;
@@ -85,24 +85,10 @@ export default function Privacy() {
 
         <Block title="Contacting me.">
           <P>
-            The only way to reach me from this site is the email link, which opens your own mail
-            client. If you email me, I have your message and your email address — the same as any
-            email — and I keep it in my inbox. I don&rsquo;t add it to a mailing list, sell it, or
-            share it.
+            You can reach me through LinkedIn using the link on my profile. Social links take you
+            to external platforms, where the platform&rsquo;s own privacy policy applies. This
+            site does not collect or store messages.
           </P>
-          {/*
-            When NEXT_PUBLIC_FORMSPREE_ID is set and the contact form ships, uncomment this
-            paragraph in the same commit, and add https://formspree.io to `connect-src` and
-            `form-action` in vercel.json and public/_headers.
-
-            <P>
-              If you use the contact form, your name, email address, and message are sent to
-              Formspree, a third-party form service, which forwards them to my inbox and stores a
-              copy in my Formspree account. See Formspree&rsquo;s privacy policy for how they
-              handle it. Nothing you submit is stored by this site. Email me and I&rsquo;ll delete
-              a submission from that account on request.
-            </P>
-          */}
         </Block>
 
         <Block title="Children.">
@@ -117,14 +103,15 @@ export default function Privacy() {
           <P>
             Rights to access, correct, or delete personal data only bite when there is data to act
             on. Since nothing is collected, there is nothing held about you to hand over or erase.
-            The exception is email you have sent me — write to{" "}
+            For questions, you can contact me on{" "}
             <a
-              href={`mailto:${site.email}`}
+              href={site.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-title underline decoration-line underline-offset-4 transition-colors hover:decoration-muted"
             >
-              {site.email}
-            </a>{" "}
-            and I&rsquo;ll delete it.
+              LinkedIn
+            </a>.
           </P>
         </Block>
 

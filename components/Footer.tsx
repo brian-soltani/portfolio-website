@@ -15,12 +15,6 @@ export default function Footer() {
           >
             Privacy
           </Link>
-          <a
-            href={`mailto:${site.email}`}
-            className="text-title underline decoration-line underline-offset-4 transition-colors hover:decoration-muted"
-          >
-            {site.email}
-          </a>
         </div>
       </div>
     </footer>

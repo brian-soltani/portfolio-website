@@ -72,26 +72,6 @@ export default function Profile() {
 
           <div className="mt-5 flex flex-wrap gap-2">
             <a
-              href={`mailto:${site.email}`}
-              className="inline-flex items-center gap-2 rounded-[9px] bg-solid px-3 py-2 text-sm font-medium text-solid-ink transition-opacity hover:opacity-90"
-            >
-              <svg
-                aria-hidden="true"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m2 7 10 6 10-6" />
-              </svg>
-              Send an email
-            </a>
-            <a
               href={site.links.github}
               target="_blank"
               rel="noopener noreferrer"
