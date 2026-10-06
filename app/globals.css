@@ -1,21 +1,19 @@
 @import "tailwindcss";
 
-/*
-  Light-only palette. Neutral greys, one dark tone for primary actions.
-*/
 :root {
-  --bg: #ffffff;
-  --panel: #fafafa;
-  --title: #171717;
-  --body: #404040;
-  --muted: #737373;
-  --line: #e5e5e5;
-  --line-soft: #ededed;
-  --solid: #404040;
-  --solid-ink: #ffffff;
-  --chip: #f5f5f5;
-  --live: #16a34a;
-  --off: #dc2626;
+  color-scheme: dark;
+  --bg: #151515;
+  --panel: #1c1c1c;
+  --title: #ededeb;
+  --body: #b8b8b5;
+  --muted: #949490;
+  --line: #343433;
+  --line-soft: #292928;
+  --solid: #ededeb;
+  --solid-ink: #151515;
+  --chip: #1c1c1c;
+  --live: #a5bba4;
+  --off: #c4a19a;
 }
 
 @theme inline {
@@ -31,110 +29,101 @@
   --color-chip: var(--chip);
   --color-live: var(--live);
   --color-off: var(--off);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: #454544 var(--bg);
 }
 
 body {
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--body);
-  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.9375rem;
-  line-height: 1.6;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--title);
-  color: var(--bg);
+  background: #40403e;
+  color: var(--title);
 }
 
 :focus-visible {
   outline: 2px solid var(--title);
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline-offset: 5px;
+  border-radius: 2px;
 }
 
-/*
-  Blueprint framing: dashed rules down both edges of the content column,
-  drawn as gradients so they stay crisp at any zoom.
-*/
-.frame {
-  position: relative;
+.portfolio-shell {
+  width: min(100% - 48px, 656px);
+  margin-inline: auto;
+  padding-block: 112px 40px;
 }
 
-.frame::before,
-.frame::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background-image: repeating-linear-gradient(to bottom, var(--line) 0 4px, transparent 4px 8px);
-  pointer-events: none;
-  z-index: 0;
+.portfolio-section {
+  margin-top: 72px;
 }
 
-.frame::before {
-  left: 0;
+.text-link {
+  color: var(--title);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition:
+    color 160ms ease,
+    text-decoration-color 160ms ease;
 }
 
-.frame::after {
-  right: 0;
+.text-link:hover {
+  color: #fff;
+  text-decoration-color: var(--muted);
 }
 
-/* Full-bleed dashed separator between sections. */
-.rule {
-  position: relative;
+.project-arrow {
+  display: inline-block;
+  margin-left: 5px;
+  color: var(--muted);
+  font-size: 0.75em;
+  text-decoration: none;
 }
 
-.rule::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
-  height: 1px;
-  background-image: repeating-linear-gradient(to right, var(--line) 0 4px, transparent 4px 8px);
-  pointer-events: none;
+summary::-webkit-details-marker {
+  display: none;
 }
 
-/* Dotted graph field for the empty band above the profile. */
-.dotfield {
-  background-image: radial-gradient(var(--line) 1px, transparent 1px);
-  background-size: 8px 8px;
+summary {
+  list-style: none;
 }
 
-/* Accordion chevron. */
-details[open] .chev {
-  transform: rotate(180deg);
+.detail-toggle {
+  transition: color 160ms ease;
 }
 
-.chev {
-  transition: transform 0.2s ease;
+.detail-toggle:hover {
+  color: var(--title);
 }
 
-/*
-  Scroll-reveal. Gated on `scripting: enabled` so the hidden state only
-  exists where the observer can actually reveal it — no inline flag script,
-  and content is never invisible without JS. Browsers that don't support
-  the query simply skip the animation and show content immediately.
-*/
-@media (scripting: enabled) {
-  .reveal {
-    opacity: 0;
-    transform: translateY(8px);
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease;
+.detail-plus {
+  display: inline-block;
+  margin-left: 4px;
+  transition: transform 160ms ease;
+}
+
+details[open] > summary .detail-plus {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 639px) {
+  .portfolio-shell {
+    padding-top: 64px;
   }
 
-  .reveal.is-visible {
-    opacity: 1;
-    transform: none;
+  .portfolio-section {
+    margin-top: 56px;
   }
 }
 
@@ -142,12 +131,10 @@ details[open] .chev {
   html {
     scroll-behavior: auto;
   }
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .chev {
-    transition: none;
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
   }
 }

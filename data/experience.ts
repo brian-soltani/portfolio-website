@@ -25,21 +25,31 @@ export type Role = {
 export const experience: Role[] = [
   {
     company: "George Mason University",
-    title: "Research Assistant, SPIRE Lab",
-    timeframe: "August 2026 - Present",
-    location: "Fairfax, Virginia",
+    title: "Undergraduate Researcher, SPIRE Lab",
+    timeframe: "2026 - Present",
+    location: "Fairfax, VA",
     logo: "/logos/spire.png",
     defaultOpen: true,
     summary:
-      "Recently joined the SPIRE Lab as a research assistant. Details on the work will go here once there's something worth writing up.",
+      "Recently joined the SPIRE Lab as an undergraduate researcher. Details on the work will go here once there's something worth writing up.",
+    sections: [],
+    stack: [],
+  },
+  {
+    company: "Commonwealth Cyber Initiative (CCI)",
+    title: "Cybersecurity Scholar",
+    timeframe: "2026 - Present",
+    location: "Fairfax, VA",
+    summary: "Cybersecurity Scholar Award Winner.",
     sections: [],
     stack: [],
   },
   {
     company: "Ngoit",
+    type: "Cofounder",
     title: "Full-Stack Developer",
     defaultOpen: true,
-    timeframe: "May 2025 - July 2026",
+    timeframe: "2025 - 2026",
     logo: "/logos/ngoit.png",
     summary:
       "Rebuilt a live e-commerce platform for more than 1,000 users, improving the customer experience and creating a reliable technical foundation for payments and future growth.",
@@ -76,9 +86,9 @@ export const experience: Role[] = [
   {
     company: "Salam Consulting",
     type: "Internship",
-    title: "AI/ML Intern",
-    timeframe: "June 2025 - September 2025",
-    location: "Remote",
+    title: "Machine Learning Engineer",
+    timeframe: "2025 - 2025",
+    location: "Fairfax, VA",
     website: "https://www.salam-consulting.com/",
     logo: "/logos/salam.png",
     summary:
@@ -104,9 +114,9 @@ export const experience: Role[] = [
   {
     company: "Oasis Hill",
     type: "Internship",
-    title: "Technical Intern",
-    timeframe: "June 2025 - August 2025",
-    location: "Arlington, Virginia",
+    title: "Full Stack Developer",
+    timeframe: "2025 - 2025",
+    location: "Arlington, VA",
     website: "https://www.oasishill.com/",
     logo: "/logos/oasis.png",
     summary:

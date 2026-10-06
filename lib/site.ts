@@ -1,9 +1,9 @@
 export const site = {
   name: "Brian Soltani",
   url: "https://briansoltani.com",
-  title: "Brian Soltani | SPIRE Lab Research Assistant",
+  title: "Brian Soltani | SPIRE Lab Undergraduate Researcher",
   description:
-    "Portfolio of Brian Soltani: software engineering, machine learning, and quantitative research. Research assistant in the SPIRE Lab and B.S. Mathematics (Data Science) student at George Mason University.",
+    "Portfolio of Brian Soltani: software engineering, machine learning, and quantitative research. Undergraduate researcher in the SPIRE Lab and B.S. Mathematics (Data Science) student at George Mason University.",
   location: "Fairfax, VA",
   links: {
     github: "https://github.com/brisolt",

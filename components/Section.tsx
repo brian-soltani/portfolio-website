@@ -1,7 +1,3 @@
-import Reveal from "./Reveal";
-
-// A titled band: full-bleed dashed rule on top, heading, then content.
-// Matches the "My experience." / "My skills." pattern.
 export default function Section({
   id,
   title,
@@ -14,14 +10,14 @@ export default function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="rule scroll-mt-8">
-      <Reveal>
-        <div className="rule flex items-center justify-between px-3 py-3.5">
-          <h2 className="text-[1.0625rem] font-semibold tracking-tight text-title">{title}</h2>
-          {action}
-        </div>
-        <div className="px-3 py-4">{children}</div>
-      </Reveal>
+    <section id={id} aria-labelledby={`${id}-heading`} className="portfolio-section scroll-mt-12">
+      <div className="mb-6 flex items-baseline justify-between gap-4">
+        <h2 id={`${id}-heading`} className="text-sm font-medium text-muted">
+          {title}
+        </h2>
+        {action}
+      </div>
+      {children}
     </section>
   );
 }
