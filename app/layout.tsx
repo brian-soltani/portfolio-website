@@ -25,7 +25,6 @@ export const metadata: Metadata = {
     card: "summary",
     title: site.title,
     description: site.description,
-    creator: site.links.twitterHandle,
   },
 };
 

@@ -38,7 +38,7 @@ npm run format
 
 ## Contact
 
-The site links to GitHub, LinkedIn, and X. No email address or contact form is published.
+The site links to GitHub and LinkedIn. No email address or contact form is published.
 
 ## Deploy
 

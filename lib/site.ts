@@ -8,8 +8,6 @@ export const site = {
   links: {
     github: "https://github.com/brisolt",
     linkedin: "https://linkedin.com/in/brian-soltani",
-    twitter: "https://x.com/brisolt_",
-    twitterHandle: "@brisolt_",
   },
   formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "",
 } as const;

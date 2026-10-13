@@ -3,7 +3,6 @@ import { site } from "@/lib/site";
 const socials = [
   { label: "GitHub", href: site.links.github },
   { label: "LinkedIn", href: site.links.linkedin },
-  { label: "X", href: site.links.twitter },
 ];
 
 export default function Profile() {
