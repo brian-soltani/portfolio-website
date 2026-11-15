@@ -1,0 +1,31 @@
+# Security headers for Netlify / Cloudflare Pages.
+#
+# `output: "export"` means next.config.ts `headers()` is inert, so headers must
+# come from the host. Netlify and Cloudflare Pages both read this file from the
+# published directory; Next copies everything in public/ into out/ on build.
+# Vercel ignores it and reads vercel.json instead — the two are kept in sync.
+#
+# GitHub Pages supports no custom headers at all. If you deploy there, the CSP
+# below simply won't apply; put the site behind Cloudflare to get them back.
+#
+# CSP notes:
+#   script-src 'unsafe-inline' — Next's static export inlines ~21 hydration
+#     scripts (self.__next_f.push). Nonces need a server, which a static export
+#     doesn't have, so inline is unavoidable here.
+#   style-src 'unsafe-inline'  — Next emits style="color:transparent" attributes
+#     on <img> elements.
+#   Everything else is 'self': fonts, images, and scripts are all self-hosted.
+#
+# When the Formspree contact form ships, add its endpoint to two directives:
+#   connect-src 'self' https://formspree.io;
+#   form-action 'self' https://formspree.io;
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Cross-Origin-Opener-Policy: same-origin
+  X-DNS-Prefetch-Control: off

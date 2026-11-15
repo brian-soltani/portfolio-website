@@ -1,0 +1,13 @@
+export const site = {
+  name: "Brian Soltani",
+  url: "https://briansoltani.com",
+  title: "Brian Soltani | SPIRE Lab Undergraduate Researcher",
+  description:
+    "Portfolio of Brian Soltani: software engineering, machine learning, and quantitative research. Undergraduate researcher in the SPIRE Lab and B.S. Mathematics (Data Science) student at George Mason University.",
+  location: "Fairfax, VA",
+  links: {
+    github: "https://github.com/brisolt",
+    linkedin: "https://linkedin.com/in/brian-soltani",
+  },
+  formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "",
+} as const;
